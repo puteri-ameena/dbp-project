@@ -1,0 +1,50 @@
+from dbp_proj import db
+db.create_all()
+from dbp_proj import schedule, examiner, coordinator, supervisor, fyp, student
+
+examiner_1 = examiner(ex_id='501',ex_name='Amelia Ritahani')
+examiner_2 = examiner(ex_id='502',ex_name='Malika Bilal')
+examiner_3 = examiner(ex_id='503',ex_name='Zakaria Ali')
+
+sv_1 = supervisor(sv_id='601',sv_name='Zamir Amin',sv_niche='Security',sv_phone='01114598776',sv_email='zamir@iium.edu.my',sv_dept='CS')
+sv_2 = supervisor(sv_id='602',sv_name='Alya Ahmed',sv_niche='Machine Learning',sv_phone='018746321',sv_email='alya@iium.edu.my',sv_dept='CS')
+sv_3 = supervisor(sv_id='603',sv_name='Safiya Umar',sv_niche='Game Development',sv_phone='0180013304',sv_email='safiya@iium.edu.my',sv_dept='IT')
+
+sc_1 = schedule(schedule_id='101',schedule_dept='CS',schedule_class_date=datetime.datetime(2021, 5, 5),schedule_milestone=datetime.datetime(2021, 5, 25))
+sc_2 = schedule(schedule_id='102',schedule_dept='CS',schedule_class_date=datetime.datetime(2021, 5, 7),schedule_milestone=datetime.datetime(2021, 5, 27))
+sc_3 = schedule(schedule_id='103',schedule_dept='IT',schedule_class_date=datetime.datetime(2021, 5, 9),schedule_milestone=datetime.datetime(2021, 5, 29))
+
+cd_1 = coordinator(cd_id='401',cd_name='Hamza Munir',cd_dept='CS',cd_phone='01114598776',cd_email='hamza@iium.com')
+cd_2 = coordinator(cd_id='403',cd_name='Amina Harun',cd_dept='IT',cd_phone='0110476619',cd_email='amina@iium.edu.my')
+
+fyp_1 = fyp(proj_id='201',proj_title='Car Cyber Security',proj_type='R', proj_level='FYP1',schedule_id='101', cd_id='401')
+fyp_2 = fyp(proj_id='202',proj_title='Predicting Rainfall',proj_type='R',proj_level='FYP2',schedule_id='102', cd_id='401')
+fyp_3 = fyp(proj_id='203',proj_title='Mario Cart: Reimagined',proj_type='D',proj_level='FYP1',schedule_id='103',cd_id='403')
+fyp_4 = fyp(proj_id='204',proj_title='Password Manager',proj_type='R',proj_level='FYP2',schedule_id='101',cd_id='401')
+fyp_5 = fyp(proj_id='205',proj_title='SVM vs Naive Bayes',proj_type='R',proj_level='FYP1',schedule_id='102', cd_id='401')
+fyp_6 = fyp(proj_id='206',proj_title='Fill my Iman',proj_type='D',proj_level='FYP2',schedule_id='103',cd_id='403')
+fyp_7 = fyp(proj_id='207',proj_title='Hash Table for Message Encryption',proj_type='R',proj_level='FYP1',schedule_id='101',cd_id='401')
+fyp_8 = fyp(proj_id='208',proj_title='Forest Fire Prediciton',proj_type='D',proj_level='FYP2',schedule_id='102',cd_id='401')
+fyp_9 = fyp(proj_id='209',proj_title='MyMuslim',proj_type='D',proj_level='FYP1',schedule_id='103',cd_id='403')
+fyp_10 = fyp(proj_id='210',proj_title='Airplane Blackbox',proj_type='R',proj_level='FYP2',schedule_id='101',cd_id='401')
+
+student_1 = student(student_id='4454',student_name='Amir Ahmed',student_phone='01444789556',student_email='amir@gmail.com',student_mark='A-',student_dept='CS',proj_id='201',sv_id='601',examiner_id='501')
+student_2 = student(student_id='4664',student_name='Layla Nura',student_phone='0172549987',student_email='layla.nura@gmail.com',student_mark='B+',student_dept='CS',proj_id='202',sv_id='602',examiner_id='502')
+student_3 = student(student_id='4675',student_name='Amir Nur',student_phone='0177422212',student_email='amir.nur@gmail.com',student_mark='A',student_dept='IT',proj_id='203', sv_id='603',examiner_id='503')
+student_4 = student(student_id='4784',student_name='Amal Salih',student_phone='0197813760',student_email='amal@gmail.com',student_mark='A-',student_dept='CS',proj_id='204',sv_id='601',examiner_id='501')
+student_5 = student(student_id='4665',student_name='Yunus Cengel',student_phone='0126471100',student_email='yunus_c@gmail.com',student_mark='C',student_dept='CS',proj_id='205',sv_id='602',examiner_id='502')
+student_6 = student(student_id='4234',student_name='Dalia Jamil',student_phone='0197816690',student_email='dalia@gmail.com',student_mark='B-',student_dept='IT', proj_id='206',sv_id='603',examiner_id='503')
+student_7 = student(student_id='4434',student_name='Ilyas Amin',student_phone='0134410877',student_email='ilyas@gmail.com',student_mark='A+',student_dept='CS',proj_id='207',sv_id='601',examiner_id='501')
+student_8 = student(student_id='4507',student_name='Ammar Nimir',student_phone='01113401222',student_email='ammar@gmail.com',student_mark='A+',student_dept='CS',proj_id='208',sv_id='602',examiner_id='502')
+student_9 = student(student_id='4415',student_name='Amira Abdul',student_phone='0107541111',student_email='amira@gmail.com',student_mark='A-',student_dept='IT',proj_id='209',sv_id='603',examiner_id='503')
+student_10 = student(student_id='4321',student_name='Rania Umar',student_phone='0103699951',student_email='rania_umar@gmail.com',student_mark='B',student_dept='CS',proj_id='210',sv_id='601',examiner_id='501')
+
+db.session.add()
+db.session.commit()
+
+QUERIES
+table.query.all()
+table.query.first()
+table.query.filter_by(col='val').all()
+var = table.query.filter_by(col='val').first()
+var.id

@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+{% block content %}
+    <h1>Projects Page</h1>
+    <a href="{{ url_for('home') }}">Back to home</a>
+    
+    {% for project in projects %}
+        <h1>Project {{ project.proj_id }}</h1>    
+        <p>Title: {{ project.proj_title }}</p>
+        <p>Project Type: {{ project.proj_type }}</p>
+        <p>Level: {{ project.proj_level }}</p>
+    {% endfor %}
+
+    <h3>Test</h3>
+{% endblock content %}

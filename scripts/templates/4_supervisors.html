@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+{% block content %}
+    <h2>Supervisors Page</h2>
+    <a href="{{ url_for('home') }}">Back to home</a>
+    
+    {% for student in students %}
+        <h3>Student {{ student.student_id }}</h3>    
+        <p>Name: {{ student.student_name }}</p>
+        <p>Project ID: {{ student.proj_id }}</p>
+        <p>Grade: {{ student.student_mark }}</p>
+    {% endfor %}
+
+{% endblock content %}
