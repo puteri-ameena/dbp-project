@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+{% block content %}
+    <h2>Coordinators Page</h2>
+    <a href="{{ url_for('home') }}">Back to home</a>
+    
+    {% for coordinator in coordinators %}
+        <h3>Coordinator {{ coordinator.cd_id }}</h3>    
+        <p>Name: {{ coordinator.cd_name }}</p>
+        <p>Department: {{ coordinator.cd_dept }}</p>
+        <p>Email: {{ coordinator.cd_email }}</p>
+    {% endfor %}
+
+{% endblock content %}

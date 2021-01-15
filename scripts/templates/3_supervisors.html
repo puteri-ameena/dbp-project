@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+{% block content %}
+    <h2>Supervisors Page</h2>
+    <a href="{{ url_for('home') }}">Back to home</a>
+    
+    {% for supervisor in supervisors %}
+        <h3>Supervisor {{ supervisor.sv_id }}</h3>    
+        <p>Name: {{ supervisor.sv_name }}</p>
+        <p>Department {{ supervisor.sv_dept }}</p>
+        <p>Email: {{ supervisor.sv_email }}</p>
+    {% endfor %}
+
+{% endblock content %}

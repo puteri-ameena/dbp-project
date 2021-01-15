@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+{% block content %}
+    <h2>Examiners Page</h2>
+    <a href="{{ url_for('home') }}">Back to home</a>
+    
+    {% for examiner in examiners %}
+        <h3>Examiner {{ examiner.ex_id }}</h3>    
+        <p>Name: {{ examiner.ex_name }}</p>
+    {% endfor %}
+
+{% endblock content %}
